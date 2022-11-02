@@ -3,6 +3,9 @@ import { Redirect, Route, Router, Routes } from "react-router-dom"
 import { ApplicationViews } from "./ApplicationViews"
 import { LandingPage } from "./views/LandingPage"
 
+// This module determines if the user is logged in
+// Sends user to login page if not
+// Sends user to Homepage if so
 
 export const Spotter = () => {
 
@@ -31,7 +34,7 @@ export const Spotter = () => {
                     </Route>
 
                     :
-
+                    // Landing page will take user sign in page...register is accessed here
                     <LandingPage setToken={setToken} />
             }
 
