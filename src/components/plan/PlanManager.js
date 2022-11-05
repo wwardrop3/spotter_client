@@ -1,15 +1,12 @@
 import { host } from "../.."
 
-
-export const saveNewWorkout = (workoutObject) => {
-
-    return fetch(`${host}/save_new_workout`, {
-        method: "POST",
+export const get_profile_plans = () => {
+    return fetch(`${host}/plans`, {
+        method: "GET",
         headers: {
             "Content-Type": "application/json",
             "Authorization": `Token ${localStorage.getItem("token")}`
-        },
-        body: JSON.stringify(workoutObject)
+        }
 
     }
     ).then(
@@ -18,9 +15,8 @@ export const saveNewWorkout = (workoutObject) => {
 }
 
 
-
-export const get_profile = (profileId) => {
-    return fetch(`${host}/profile/${profileId}`, {
+export const get_plan = (planId) => {
+    return fetch(`${host}/plans/${planId}`, {
         method: "GET",
         headers: {
             "Content-Type": "application/json",
